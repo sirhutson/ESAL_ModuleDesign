@@ -6,7 +6,8 @@ Prereqs:
 - View supplementary lecture on forking
 
 Steps.    
-- Fork a copy of the repository to your personal github account.    
+- Fork a copy of the repository to your personal github account.   
+- Work only in the appropriate branch for your class or you will not receive credit.  
 - Working with your group, create the code described by the instructor.    
 - Only insert code in the designated group location in each file
 - Edit, commit, and push your code to your personal repo.  
