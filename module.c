@@ -112,7 +112,7 @@
 //group3
 void send_one()  //user inputs the letter(port) and number(pin)
 {
-	//might need a for loop to reach time
+	//might need a for loop to reach time requirement
 	GPIOPinWrite( WSPort, WSPin, 1);
 	//some delay
 	GPIOPinWrite(WSPort, WSPin, 0);

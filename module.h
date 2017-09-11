@@ -86,7 +86,8 @@
 //group2
 
 //group3
-
+void setupPins();
+void sendone();
 //group4
 
 //group5
