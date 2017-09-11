@@ -19,7 +19,9 @@
 
 #include <stdbool.h>
 #include <stdint.h>
-#include <stdlib.h>
+#include <stdlib.h> 
+#include "gpio.h"
+
 
 //group1
 
@@ -86,6 +88,8 @@
 //group2
 
 //group3
+void setupPins(char port, uint8_t pin);
+void send_one(char port, uint8_t pin);
 
 //group4
 
