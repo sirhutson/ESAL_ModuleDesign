@@ -71,7 +71,8 @@
 //group2
 
 //group3
-
+char 		WSPort;
+uint32_t 	WSPin;
 //group4
 
 //group5
@@ -86,7 +87,8 @@
 //group2
 
 //group3
-
+void setupPins(char, uint32_t);
+void sendOne(void);
 //group4
 
 //group5
