@@ -71,7 +71,7 @@
 //group2
 
 //group3
-char 		WSPort;
+uint8_t		WSPort;
 uint32_t 	WSPin;
 //group4
 
