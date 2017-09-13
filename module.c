@@ -110,12 +110,13 @@
 //group2
 
 //group3
-void setupPins(Char port, uint32_t pin);
+void setupPins(Char port, uint32_t pin);   //user inputs the letter(port) and number(pin)
 {
 	port = toupper(port);
 	switch(port)
 	{
    		case 'A'  :
+		WSPort = 0;
       		SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOA);
 		switch (pin)
 		{
@@ -155,6 +156,7 @@ void setupPins(Char port, uint32_t pin);
       		break;
 	
    		case 'B'  :
+		WSPort = 1;
       		SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOB);
 		switch (pin)
 		{
@@ -193,6 +195,7 @@ void setupPins(Char port, uint32_t pin);
       		break;
 
    		case 'C'  :
+		WSPort = 2;
       		SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOC);
 		switch (pin)
 		{
@@ -231,6 +234,7 @@ void setupPins(Char port, uint32_t pin);
       		break;
 
    		case 'D'  :
+		WSPort = 3;
       		SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOD);
 		switch (pin)
 		{
@@ -269,6 +273,7 @@ void setupPins(Char port, uint32_t pin);
       		break;
 
    		case 'E'  :
+		WSPort = 4;
       		SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOE);
 		switch (pin)
 		{
@@ -307,6 +312,7 @@ void setupPins(Char port, uint32_t pin);
       		break;
 
    		case 'F'  :
+		WSPort = 5;
       		SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOF);
 		switch (pin)
 		{
@@ -344,13 +350,30 @@ void setupPins(Char port, uint32_t pin);
 		}
       		break;
 
-WSPort = port;
+
 WSPin = pin;
 }
 
-void sendOne(void);
+void send_one()
 {
-
+	int i;
+	
+	//with a clock speed of 16MHz it is 62.5ns to complete an instruction
+	//each instruction is 1 clock cycle
+	
+	GPIOPinWrite( WSPort, WSPin, WSPin);
+	for (i=0; i<1;i++) // this loop will leave the pin high for .6875 micro seconds  which is within the +/- 150 micro second range
+	{
+		__nop;
+	}
+	//using nop could just delay system for around the right time with the possible error
+	GPIOPinWrite(WSPort, WSPin, 0);
+		for (i=0; i<7;i++) //this will leave the pin low for 
+	{
+		__nop;
+	}
+	
+	
 }
 
 //group4
