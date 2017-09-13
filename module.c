@@ -362,7 +362,7 @@ void sendOne();
 	//each instruction is 1 clock cycle
 	
 	GPIOPinWrite( WSPort, WSPin, WSPin);
-	for (i=0; i<1;i++) // this loop will leave the pin high for .6875 micro seconds  which is within the +/- 150 micro second range
+	for (i=0; i<9;i++) // this loop will leave the pin high for .6875 micro seconds  which is within the +/- 150 micro second range
 	{
 		__nop;
 	}
