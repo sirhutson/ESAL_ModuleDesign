@@ -354,7 +354,7 @@ void setupPins(Char port, uint32_t pin);   //user inputs the letter(port) and nu
 WSPin = pin;
 }
 
-void send_one()
+void sendOne();
 {
 	int i;
 	
