@@ -348,9 +348,26 @@ WSPort = port;
 WSPin = pin;
 }
 
-void sendOne(void);
+void send_one()  //user inputs the letter(port) and number(pin)
 {
-
+	int i;
+	
+	//with a clock speed of 16MHz it is 62.5ns to complete an instruction
+	//each instruction is 1 clock cycle
+	
+	GPIOPinWrite( WSPort, WSPin, WSPin);
+	for (i=0; i<1;i++) // this loop will leave the pin high for .6875 micro seconds  which is within the +/- 150 micro second range
+	{
+		__nop;
+	}
+	//using nop could just delay system for around the right time with the possible error
+	GPIOPinWrite(WSPort, WSPin, 0);
+		for (i=0; i<7;i++) //this will leave the pin low for 
+	{
+		__nop;
+	}
+	
+	
 }
 
 //group4
