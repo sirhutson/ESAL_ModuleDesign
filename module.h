@@ -20,7 +20,8 @@
 #include <stdbool.h>
 #include <stdint.h>
 #include <stdlib.h>
-
+#include "gpio.h"
+#include "sysctl.h"
 //group1
 
 //group2
@@ -87,7 +88,7 @@
 
 //group3
 void setupPins();
-void sendone();
+void send_one();
 //group4
 
 //group5
